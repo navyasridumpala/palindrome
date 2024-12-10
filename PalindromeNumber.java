@@ -1,15 +1,21 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class PalindromeNumber {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a number: ");
-        int number = scanner.nextInt();
+        int number = 0;
 
-        if (isPalindrome(number)) {
-            System.out.println(number + " is a palindrome.");
-        } else {
-            System.out.println(number + " is not a palindrome.");
+        try {
+            number = scanner.nextInt();
+            if (isPalindrome(number)) {
+                System.out.println(number + " is a palindrome.");
+            } else {
+                System.out.println(number + " is not a palindrome.");
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Please enter a valid integer.");
         }
     }
 
@@ -26,6 +32,7 @@ public class PalindromeNumber {
         return originalNumber == reversedNumber;
     }
 }
+
 
 
 
