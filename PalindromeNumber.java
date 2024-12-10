@@ -1,6 +1,19 @@
+import java.util.Scanner;
+
 public class PalindromeNumber {
     public static void main(String[] args) {
-        int number = 1221; // Example number
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+
+        if (isPalindrome(number)) {
+            System.out.println(number + " is a palindrome.");
+        } else {
+            System.out.println(number + " is not a palindrome.");
+        }
+    }
+
+    public static boolean isPalindrome(int number) {
         int reversedNumber = 0;
         int originalNumber = number;
 
@@ -10,11 +23,45 @@ public class PalindromeNumber {
             number /= 10;
         }
 
-        if (originalNumber == reversedNumber) {
-            System.out.println(originalNumber + " is a palindrome.");
-        } else {
-            System.out.println(originalNumber + " is not a palindrome.");
-        }
+        return originalNumber == reversedNumber;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
